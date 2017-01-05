@@ -1,0 +1,155 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>AS Karuta</title>
+<meta charset="utf-8">
+<script src="//code.jquery.com/jquery-1.10.1.min.js"></script>
+<script>
+var ip = {items:[{ip:"2497", vendor:"IIJ"},{ip:"2499", vendor:"ipv4exh-lab"},{ip:"2500", vendor:"WIDE-BB"},{ip:"2501", vendor:"UTnet"},{ip:"2502", vendor:"TRAIN"},{ip:"2503", vendor:"TOPIC"},{ip:"2504", vendor:"NCA5"},{ip:"2505", vendor:"HEPNET-J"},{ip:"2506", vendor:"SuperCSI"},{ip:"2508", vendor:"kyushu-u"},{ip:"2510", vendor:"INFOWEB"},{ip:"2511", vendor:"CORE"},{ip:"2512", vendor:"TCP-NET"},{ip:"2513", vendor:"JST"},{ip:"2514", vendor:"InfoSphere"},{ip:"2515", vendor:"JPNIC"},{ip:"2516", vendor:"KDDI"},{ip:"2518", vendor:"BIGLOBE"},{ip:"2519", vendor:"VECTANT"},{ip:"2521", vendor:"IDC2521"},{ip:"2523", vendor:"ITRC-NET"},{ip:"2524", vendor:"RIM"},{ip:"2526", vendor:"HITNET"},{ip:"2527", vendor:"So-net"},{ip:"2554", vendor:"IDC2554"},{ip:"2907", vendor:"SINET-AS"},{ip:"3488", vendor:"JAXAnet"},{ip:"4197", vendor:"IDC4197"},{ip:"4672", vendor:"IBMNET"},{ip:"4673", vendor:"INTERVIA"},{ip:"4675", vendor:"U-NETSURF"},{ip:"4677", vendor:"PTOP"},{ip:"4678", vendor:"FINE"},{ip:"4680", vendor:"MIND"},{ip:"4681", vendor:"IDC4681"},{ip:"4682", vendor:"ITNET"},{ip:"4683", vendor:"PAS"},{ip:"4684", vendor:"NTTPC"},{ip:"4685", vendor:"ASAHI-NET"},{ip:"4686", vendor:"BEKKOAME"},{ip:"4688", vendor:"HI-HO"},{ip:"4690", vendor:"WIDE-MEXP"},{ip:"4691", vendor:"DTI"},{ip:"4692", vendor:"INTERGATE"},{ip:"4693", vendor:"CSK"},{ip:"4694", vendor:"IDC"},{ip:"4695", vendor:"URBAN"},{ip:"4697", vendor:"NTTV6NET"},{ip:"4698", vendor:"INTERLINK"},{ip:"4700", vendor:"NIJI-NET"},{ip:"4704", vendor:"SANNET"},{ip:"4708", vendor:"INFONIA"},{ip:"4709", vendor:"NETLAPUTA"},{ip:"4710", vendor:"ID-NET"},{ip:"4711", vendor:"INTEC"},{ip:"4712", vendor:"JT-Net"},{ip:"4713", vendor:"OCN"},{ip:"4716", vendor:"POWEREDCOM"},{ip:"4717", vendor:"AI3"},{ip:"4718", vendor:"CKP"},{ip:"4719", vendor:"OET"},{ip:"4721", vendor:"JCN"},{ip:"4722", vendor:"WSIP"},{ip:"4723", vendor:"DOLPHIN"},{ip:"4725", vendor:"ODN"},{ip:"4727", vendor:"BSS"},{ip:"4729", vendor:"JAEA"},{ip:"4730", vendor:"ODINS"},{ip:"4732", vendor:"DION"},{ip:"7488", vendor:"IDC7488"},{ip:"7500", vendor:"M-ROOT-DNS"},{ip:"7502", vendor:"IP-KYOTO"},{ip:"7503", vendor:"AIR"},{ip:"7505", vendor:"MEDIAWEB"},{ip:"7506", vendor:"INTERQ"},{ip:"7509", vendor:"HINET"},{ip:"7511", vendor:"SYNAPSE"},{ip:"7512", vendor:"WITH"},{ip:"7513", vendor:"NETFORWARD"},{ip:"7514", vendor:"MEX"},{ip:"7515", vendor:"GROBAL-OCN"},{ip:"7516", vendor:"TOHKNET"},{ip:"7517", vendor:"MII"},{ip:"7521", vendor:"MFEED"},{ip:"7522", vendor:"STCN"},{ip:"7523", vendor:"TECHNOW"},{ip:"7524", vendor:"HANSHIN"},{ip:"7526", vendor:"MIND-US"},{ip:"7527", vendor:"JPIX"},{ip:"7529", vendor:"NETIRD"},{ip:"7530", vendor:"IRI"},{ip:"7531", vendor:"GENOME"},{ip:"7660", vendor:"APAN-JP"},{ip:"7661", vendor:"NORTH"},{ip:"7663", vendor:"FFNET"},{ip:"7664", vendor:"HARENET"},{ip:"7665", vendor:"OKIX"},{ip:"7666", vendor:"OKIX-1"},{ip:"7667", vendor:"KDDLAB"},{ip:"7668", vendor:"HTCN"},{ip:"7669", vendor:"DTC"},{ip:"7670", vendor:"CTNET"},{ip:"7671", vendor:"MCNET"},{ip:"7672", vendor:"FITWEB"},{ip:"7673", vendor:"ALLES"},{ip:"7674", vendor:"GOFORS"},{ip:"7676", vendor:"TAM"},{ip:"7677", vendor:"DNP"},{ip:"7678", vendor:"PROX"},{ip:"7679", vendor:"QTNET"},{ip:"7682", vendor:"HOTNET"},{ip:"7683", vendor:"CRUST-AS"},{ip:"7684", vendor:"SAKURA-A"},{ip:"7686", vendor:"ATNETHOME"},{ip:"7687", vendor:"D-CRUISENET"},{ip:"7688", vendor:"MISH"},{ip:"7690", vendor:"MIRAI"},{ip:"9351", vendor:"ZLAN"},{ip:"9352", vendor:"KUMAGAYA"},{ip:"9353", vendor:"MEDIAWARS"},{ip:"9354", vendor:"TDNC"},{ip:"9355", vendor:"NICT"},{ip:"9357", vendor:"FNC"},{ip:"9358", vendor:"KISWEB"},{ip:"9363", vendor:"NET-TECH"},{ip:"9365", vendor:"iTSCOM"},{ip:"9366", vendor:"SOLITON"},{ip:"9367", vendor:"TITECH"},{ip:"9370", vendor:"SAKURA-B"},{ip:"9371", vendor:"SAKURA-C"},{ip:"9372", vendor:"UEC"},{ip:"9374", vendor:"EDION"},{ip:"9376", vendor:"SAKURANET"},{ip:"9378", vendor:"CABLENET"},{ip:"9380", vendor:"AITAI-NET"},{ip:"9591", vendor:"NIFS"},{ip:"9592", vendor:"PRISM"},{ip:"9593", vendor:"NIKKEI"},{ip:"9595", vendor:"XEPHION"},{ip:"9597", vendor:"CPI-NET"},{ip:"9598", vendor:"MPLS-OCN"},{ip:"9599", vendor:"INFOPEPPER"},{ip:"9600", vendor:"SONYTELECOM"},{ip:"9601", vendor:"SHIBATA"},{ip:"9604", vendor:"FSI-AS"},{ip:"9605", vendor:"MOPERA"},{ip:"9606", vendor:"ISAS-AS"},{ip:"9607", vendor:"BBTower"},{ip:"9608", vendor:"Happy"},{ip:"9609", vendor:"EACCESS"},{ip:"9614", vendor:"OCT"},{ip:"9615", vendor:"TEES"},{ip:"9616", vendor:"MuX"},{ip:"9617", vendor:"ZAQ"},{ip:"9618", vendor:"TCN"},{ip:"9619", vendor:"SSD"},{ip:"9621", vendor:"II-OKINAWA"},{ip:"9622", vendor:"KCT"},{ip:"9990", vendor:"NIandC"},{ip:"9991", vendor:"SHUDO-U"},{ip:"9993", vendor:"CTC-ODC"},{ip:"9995", vendor:"FirstServer"},{ip:"9996", vendor:"KDDIIP-VPN"},{ip:"9997", vendor:"MECHA"},{ip:"9998", vendor:"ISAO"},{ip:"9999", vendor:"ATTOKYO"},{ip:"10000", vendor:"NCM"},{ip:"10001", vendor:"MICSNET"},{ip:"10002", vendor:"ICT"},{ip:"10003", vendor:"OCT-NET"},{ip:"10004", vendor:"AS-PHOENIX-J"},{ip:"10006", vendor:"SECOMTRUST"},{ip:"10007", vendor:"IPR"},{ip:"10009", vendor:"AREWorks"},{ip:"10010", vendor:"TOKAI"},{ip:"10011", vendor:"ADVAN"},{ip:"10012", vendor:"FUSION"},{ip:"10013", vendor:"FBDC"},{ip:"10014", vendor:"NIHON-U"},{ip:"10015", vendor:"CWJ-NET"},{ip:"10016", vendor:"MINC"},{ip:"10019", vendor:"MCTV"},{ip:"10021", vendor:"KVH"},{ip:"17504", vendor:"NETCOM"},{ip:"17505", vendor:"SBmobile"},{ip:"17506", vendor:"UCOM"},{ip:"17509", vendor:"STARNET"},{ip:"17510", vendor:"ISID"},{ip:"17511", vendor:"K-Opticom"},{ip:"17512", vendor:"JAL"},{ip:"17513", vendor:"Kids-Net"},{ip:"17514", vendor:"AICS"},{ip:"17516", vendor:"NTTCOMWARE"},{ip:"17518", vendor:"SHIOJIRI"},{ip:"17521", vendor:"KUT"},{ip:"17522", vendor:"NTT-WEST"},{ip:"17523", vendor:"AOYAMA"},{ip:"17524", vendor:"DSN"},{ip:"17527", vendor:"MEDIAS"},{ip:"17528", vendor:"COSMOS-NET"},{ip:"17529", vendor:"MediaCat"},{ip:"17530", vendor:"NNS"},{ip:"17532", vendor:"T-KOUGEI"},{ip:"17534", vendor:"NSK"},{ip:"17673", vendor:"MKInet"},{ip:"17675", vendor:"AS-PNAPTOK"},{ip:"17676", vendor:"GIGAINFRA"},{ip:"17677", vendor:"MIINET"},{ip:"17678", vendor:"WIND"},{ip:"17680", vendor:"SCS"},{ip:"17682", vendor:"CABLENET296"},{ip:"17683", vendor:"WINTECH-COM"},{ip:"17685", vendor:"PLAYONLINE"},{ip:"17686", vendor:"ACCELIA"},{ip:"17687", vendor:"NICE"},{ip:"17688", vendor:"SHINENET"},{ip:"17689", vendor:"H-IX"},{ip:"17691", vendor:"TikiTiki"},{ip:"17692", vendor:"KCCS"},{ip:"17693", vendor:"NEKONET"},{ip:"17694", vendor:"JPN-DBJP"},{ip:"17695", vendor:"MLJS"},{ip:"17696", vendor:"KDDIOK-NET"},{ip:"17697", vendor:"BBX"},{ip:"17698", vendor:"CCNET-NET"},{ip:"17699", vendor:"MEDiA"},{ip:"17701", vendor:"SEINAN"},{ip:"17931", vendor:"NETFOREST"},{ip:"17932", vendor:"JAIST"},{ip:"17933", vendor:"NTT-EAST"},{ip:"17934", vendor:"JGNv6"},{ip:"17936", vendor:"CTK"},{ip:"17937", vendor:"NDMC"},{ip:"17938", vendor:"ASSOCIO"},{ip:"17939", vendor:"MCN-NET01"},{ip:"17940", vendor:"CYBERLINKS"},{ip:"17941", vendor:"BIT-ISLE"},{ip:"17943", vendor:"TDU"},{ip:"17944", vendor:"JWA"},{ip:"17945", vendor:"iTV"},{ip:"17946", vendor:"GUCC"},{ip:"17947", vendor:"S-UTOPIA"},{ip:"17948", vendor:"EditNet"},{ip:"17949", vendor:"TEU"},{ip:"17950", vendor:"SaiNet-AS"},{ip:"17951", vendor:"KOCOE"},{ip:"17953", vendor:"ICO"},{ip:"17955", vendor:"AVISNET"},{ip:"17956", vendor:"WASEDA"},{ip:"17957", vendor:"CTS"},{ip:"17958", vendor:"KCV"},{ip:"17960", vendor:"RAINS-AS"},{ip:"17961", vendor:"MITENE"},{ip:"18067", vendor:"HUMEIA"},{ip:"18068", vendor:"ACROSS"},{ip:"18069", vendor:"SOFTBANK"},{ip:"18070", vendor:"NDAC"},{ip:"18071", vendor:"MEI1"},{ip:"18072", vendor:"STREAMWING"},{ip:"18074", vendor:"FRT"},{ip:"18075", vendor:"HICAT"},{ip:"18076", vendor:"WCE-IAMAS"},{ip:"18077", vendor:"C-able"},{ip:"18080", vendor:"SOPIA"},{ip:"18081", vendor:"KCN"},{ip:"18082", vendor:"LASDEC"},{ip:"18084", vendor:"ANC"},{ip:"18085", vendor:"INFOVALLEY"},{ip:"18086", vendor:"PFU-IDC"},{ip:"18087", vendor:"TOYO"},{ip:"18088", vendor:"QIC"},{ip:"18089", vendor:"HIKARI-NWC"},{ip:"18090", vendor:"MAGMA"},{ip:"18091", vendor:"TEIKYO-U"},{ip:"18092", vendor:"CSF"},{ip:"18094", vendor:"TCN-AS"},{ip:"18095", vendor:"REITAKU"},{ip:"18097", vendor:"DCN"},{ip:"18121", vendor:"INCL"},{ip:"18122", vendor:"KYOTO-IX"},{ip:"18123", vendor:"SEIRYO"},{ip:"18124", vendor:"OUS-NET"},{ip:"18125", vendor:"MAFFIN"},{ip:"18126", vendor:"CTCX"},{ip:"18127", vendor:"Tsukuba-WAN"},{ip:"18128", vendor:"RIKEN"},{ip:"18129", vendor:"ONI"},{ip:"18131", vendor:"IR3"},{ip:"18133", vendor:"gamaniajp"},{ip:"18134", vendor:"KITANET"},{ip:"18135", vendor:"BTV"},{ip:"18136", vendor:"CTA"},{ip:"18138", vendor:"HI-NET"},{ip:"18139", vendor:"HISOL-CSV"},{ip:"18140", vendor:"YAHOO-18140"},{ip:"18141", vendor:"HBA-iDC"},{ip:"18142", vendor:"BIWALOBE"},{ip:"18143", vendor:"DCSNET"},{ip:"18144", vendor:"AS-ENECOM"},{ip:"18146", vendor:"InetCore"},{ip:"18148", vendor:"FUKUOKA-U"},{ip:"18149", vendor:"JPRS"},{ip:"18150", vendor:"SNI-JP"},{ip:"18151", vendor:"CEC"},{ip:"18259", vendor:"HIGE"},{ip:"18260", vendor:"e-catv"},{ip:"18263", vendor:"MEINET"},{ip:"18264", vendor:"SEN"},{ip:"18265", vendor:"TWIN"},{ip:"18266", vendor:"ATNAP"},{ip:"18267", vendor:"DOSHISHA"},{ip:"18268", vendor:"JANIS"},{ip:"18269", vendor:"KAI"},{ip:"18270", vendor:"TOIN"},{ip:"18271", vendor:"EVOnet"},{ip:"18272", vendor:"BSH-NET"},{ip:"18274", vendor:"UCATV"},{ip:"18276", vendor:"KAISER"},{ip:"18277", vendor:"KUSA"},{ip:"18278", vendor:"CC9N"},{ip:"18279", vendor:"BUKKYO-U"},{ip:"18281", vendor:"TAC-NET"},{ip:"18282", vendor:"CORALNET"},{ip:"18283", vendor:"CCV"},{ip:"18284", vendor:"ISETANNET"},{ip:"18286", vendor:"OCUNET"},{ip:"18287", vendor:"OCV"},{ip:"18289", vendor:"AGNS-JP-IBM"},{ip:"18290", vendor:"IWAMI"},{ip:"23613", vendor:"NMTNET"},{ip:"23614", vendor:"I-KOCHI"},{ip:"23615", vendor:"KUSANAGI"},{ip:"23616", vendor:"HNB"},{ip:"23617", vendor:"AT-HANA"},{ip:"23618", vendor:"ICV-NET"},{ip:"23619", vendor:"E-OSAKA"},{ip:"23620", vendor:"DooGA"},{ip:"23621", vendor:"GINGANET"},{ip:"23622", vendor:"TSURU-GAKUEN"},{ip:"23623", vendor:"CHUO-U"},{ip:"23624", vendor:"CHUKAI"},{ip:"23625", vendor:"TOKAI-WBS"},{ip:"23627", vendor:"UCVNET"},{ip:"23628", vendor:"ACCSnet"},{ip:"23629", vendor:"OCTV"},{ip:"23630", vendor:"CAC-NET"},{ip:"23631", vendor:"KISNET"},{ip:"23632", vendor:"TVT-NET"},{ip:"23633", vendor:"LOCAL-IX"},{ip:"23634", vendor:"E-DNS-JP"},{ip:"23635", vendor:"CRCC"},{ip:"23637", vendor:"BI-CDN-IX"},{ip:"23638", vendor:"AMIXCOM"},{ip:"23639", vendor:"ntt-bizlink"},{ip:"23640", vendor:"BBIX"},{ip:"23641", vendor:"NSCS-NET"},{ip:"23642", vendor:"OBIS"},{ip:"23773", vendor:"EKZM"},{ip:"23774", vendor:"A-DNS-JP"},{ip:"23775", vendor:"Tamatele-NET"},{ip:"23776", vendor:"NEXS"},{ip:"23777", vendor:"VIPALETTE"},{ip:"23778", vendor:"CANET"},{ip:"23779", vendor:"N-BONE"},{ip:"23780", vendor:"CTB"},{ip:"23781", vendor:"Toyama-AN-AS"},{ip:"23782", vendor:"INFOTOKYO"},{ip:"23783", vendor:"CNA"},{ip:"23784", vendor:"POLEXCHENGE"},{ip:"23785", vendor:"SUNFIELD"},{ip:"23786", vendor:"MABLE"},{ip:"23788", vendor:"HICT"},{ip:"23790", vendor:"KCN-TV"},{ip:"23791", vendor:"LCV"},{ip:"23793", vendor:"AIST"},{ip:"23794", vendor:"BMCDN"},{ip:"23795", vendor:"FURUKAWA"},{ip:"23796", vendor:"GEMnet"},{ip:"23797", vendor:"IXO"},{ip:"23798", vendor:"VRTC-NET"},{ip:"23799", vendor:"NDA"},{ip:"23800", vendor:"FUKUI-NCT"},{ip:"23801", vendor:"Sol-GIFU"},{ip:"23803", vendor:"HGC"},{ip:"23804", vendor:"AIN-NET"},{ip:"23805", vendor:"WATVnet"},{ip:"23806", vendor:"HBS"},{ip:"23807", vendor:"RITSUMEI"},{ip:"23808", vendor:"TOSHIMA-NET"},{ip:"23809", vendor:"TV-NARUTO"},{ip:"23810", vendor:"IC-NET"},{ip:"23813", vendor:"SORUN"},{ip:"23814", vendor:"T-LEX"},{ip:"23815", vendor:"JPIX-RS"},{ip:"23816", vendor:"YAHOO"},{ip:"23817", vendor:"KOCHI-IDC"},{ip:"23818", vendor:"JETINTERNET"},{ip:"23820", vendor:"RAKUTEN"},{ip:"23822", vendor:"HAGINET"},{ip:"23824", vendor:"FUTURE"},{ip:"23826", vendor:"DAIDO-IT"},{ip:"23827", vendor:"ANC-Net"},{ip:"23828", vendor:"CHERRY-NET"},{ip:"23829", vendor:"meon-yama"},{ip:"23830", vendor:"GAITAME"},{ip:"23831", vendor:"CLOVERNET"},{ip:"23833", vendor:"MARUSAN-NET"},{ip:"23835", vendor:"SEGANET"},{ip:"23836", vendor:"RELNET"},{ip:"24248", vendor:"ASN-WADAI-U"},{ip:"24249", vendor:"JWAY"},{ip:"24250", vendor:"MC-IDC"},{ip:"24251", vendor:"ICNTV-NET"},{ip:"24252", vendor:"JPRS-NAYUTA"},{ip:"24253", vendor:"J-Stream"},{ip:"24254", vendor:"KYOTO-SU"},{ip:"24255", vendor:"T-CATV"},{ip:"24256", vendor:"SOFTBANKBB"},{ip:"24257", vendor:"JPIX-64ES"},{ip:"24259", vendor:"BC9"},{ip:"24260", vendor:"KINJO-AS"},{ip:"24261", vendor:"mie-u"},{ip:"24262", vendor:"HIcom"},{ip:"24263", vendor:"HONDA-NET"},{ip:"24264", vendor:"KANAZAWA-IT"},{ip:"24265", vendor:"Agilit"},{ip:"24268", vendor:"SAINS"},{ip:"24270", vendor:"CRC-KCC"},{ip:"24271", vendor:"iCTV"},{ip:"24273", vendor:"CANON"},{ip:"24274", vendor:"ACTELION-JP"},{ip:"24275", vendor:"TOTO"},{ip:"24276", vendor:"ICNET"},{ip:"24277", vendor:"NIRAI"},{ip:"24278", vendor:"USEN-NET"},{ip:"24279", vendor:"CAT-V"},{ip:"24280", vendor:"HIS-TKIDC"},{ip:"24282", vendor:"KIR"},{ip:"24283", vendor:"MIEDEN-NET"},{ip:"24284", vendor:"CYBERAGENT"},{ip:"24286", vendor:"WNI-AS"},{ip:"24287", vendor:"TEIN2-JP"},{ip:"24288", vendor:"ACCUTECHS"},{ip:"24289", vendor:"KBN"},{ip:"24290", vendor:"HEARTNET"},{ip:"24291", vendor:"MITSUI-NW"},{ip:"24292", vendor:"NSSOL"},{ip:"24293", vendor:"InfoSakyu"},{ip:"24295", vendor:"AS-PNAPOSK"},{ip:"24296", vendor:"YAHOO-2"},{ip:"24297", vendor:"FCN"},{ip:"37888", vendor:"HORIBA-NET"},{ip:"37889", vendor:"JPARC-NET"},{ip:"37891", vendor:"JTIS"},{ip:"37892", vendor:"WAI-NET"},{ip:"37893", vendor:"TRADEWEB-TKO"},{ip:"37895", vendor:"RYUKOKU"},{ip:"37897", vendor:"LEXUES-NET"},{ip:"37898", vendor:"BARTOK-NET"},{ip:"37899", vendor:"NTTW-NGN-AS"},{ip:"37900", vendor:"CPF-NET"},{ip:"37901", vendor:"NTTE-NGN-AS"},{ip:"37902", vendor:"NOMURA-TRADE"},{ip:"37903", vendor:"eMobile"},{ip:"37904", vendor:"SBmobileopen"},{ip:"37905", vendor:"BRASTEL-NET"},{ip:"37906", vendor:"NETIRD-2"},{ip:"37907", vendor:"DIGIROCK"},{ip:"37908", vendor:"KBC"},{ip:"37909", vendor:"WAKHOK-NET"},{ip:"37910", vendor:"CUNET"},{ip:"37912", vendor:"IPRIO-JP"},{ip:"37914", vendor:"Univnet"},{ip:"37915", vendor:"Ke-net"},{ip:"37916", vendor:"atworks"},{ip:"37917", vendor:"UTINS"},{ip:"37918", vendor:"ECL-INET"},{ip:"37919", vendor:"SEGA"},{ip:"37920", vendor:"SHIGANET-AS"},{ip:"37922", vendor:"CATVY"},{ip:"37923", vendor:"DOUSOJIN"},{ip:"37924", vendor:"KKR-MLIT-AS"},{ip:"37925", vendor:"USEN-WEST"},{ip:"37926", vendor:"ETT-NET"},{ip:"37927", vendor:"NOMURATRADE"},{ip:"38627", vendor:"BAIDUJP"},{ip:"38628", vendor:"WINK-NET"},{ip:"38629", vendor:"OKN"},{ip:"38631", vendor:"LINE"},{ip:"38632", vendor:"XCON"},{ip:"38633", vendor:"VCIU-NET-AS"},{ip:"38634", vendor:"DWANGO"},{ip:"38635", vendor:"KEIO-NET"},{ip:"38636", vendor:"DENA-NET"},{ip:"38638", vendor:"IP-CORE"},{ip:"38639", vendor:"HANABI"},{ip:"38640", vendor:"SAKURA-E"},{ip:"38641", vendor:"LEONET-AS"},{ip:"38642", vendor:"YOSHIZOU"},{ip:"38643", vendor:"U-Cloud"},{ip:"38644", vendor:"MULTIFEED"},{ip:"38645", vendor:"NTTCOM-GRX"},{ip:"38646", vendor:"TOKYO6TO4"},{ip:"38648", vendor:"F-REGI"},{ip:"38651", vendor:"Mixi"},{ip:"38652", vendor:"GINZADO-NET"},{ip:"38653", vendor:"JAPANPOST"},{ip:"38654", vendor:"INES-NETWORK"},{ip:"38655", vendor:"SaiNet-AS2"},{ip:"45672", vendor:"RCCTV"},{ip:"45673", vendor:"OECU-NET"},{ip:"45674", vendor:"MIDORI"},{ip:"45675", vendor:"KMN-TOKYO"},{ip:"45676", vendor:"SBIT"},{ip:"45677", vendor:"ICV"},{ip:"45678", vendor:"AAC-JP-AS"},{ip:"45679", vendor:"TOMOCHA-NET"},{ip:"45680", vendor:"DOVA-NET"},{ip:"45682", vendor:"ASN-EXCITE"},{ip:"45684", vendor:"MIRAINET"},{ip:"45685", vendor:"RIKKYO-U"},{ip:"45686", vendor:"RFEED"},{ip:"45687", vendor:"MCT-Internet"},{ip:"45688", vendor:"UT-NSRG"},{ip:"45689", vendor:"CONVIVIALNET"},{ip:"45690", vendor:"JCTV-NET"},{ip:"45691", vendor:"ELLIOTT-ASIA"},{ip:"55372", vendor:"OIX"},{ip:"55373", vendor:"TRI-KOBE-NET"},{ip:"55374", vendor:"TOKYO6TO4NTT"},{ip:"55375", vendor:"SI-NET"},{ip:"55376", vendor:"KCV-HitaNet"},{ip:"55377", vendor:"Sadaitec"},{ip:"55378", vendor:"QUICK-YCCNET"},{ip:"55379", vendor:"hosei-net"},{ip:"55380", vendor:"KAINS"},{ip:"55381", vendor:"CCSNET"},{ip:"55382", vendor:"HOT-CHA"},{ip:"55383", vendor:"IDC-JP"},{ip:"55384", vendor:"JAIST-EXP"},{ip:"55385", vendor:"DA"},{ip:"55387", vendor:"RMGR-MIX"},{ip:"55388", vendor:"ASJ"},{ip:"55389", vendor:"JPNE"},{ip:"55390", vendor:"TUSNET"},{ip:"55391", vendor:"MF-NATIVE6-E"},{ip:"55392", vendor:"MF-NATIVE6-W"},{ip:"55393", vendor:"MIDOKURA"},{ip:"55394", vendor:"GREE-NET"},{ip:"55395", vendor:"FUSION-C"},{ip:"55396", vendor:"FNCLAB"},{ip:"55889", vendor:"BITISLE-WEST"},{ip:"55890", vendor:"SUNTORY"},{ip:"55891", vendor:"WBTSJP-AS"},{ip:"55893", vendor:"HOKEN-NET"},{ip:"55894", vendor:"WHOSNEXT"},{ip:"55895", vendor:"echigo-IX"},{ip:"55896", vendor:"VIDEX"},{ip:"55897", vendor:"NIPPON-RAD"},{ip:"55898", vendor:"YAHOO-CORP"},{ip:"55899", vendor:"SIG"},{ip:"55900", vendor:"GLBB-JP"},{ip:"55901", vendor:"SCEI-NET"},{ip:"55902", vendor:"TS-NET"},{ip:"55903", vendor:"arrownet"},{ip:"55904", vendor:"KOGAKUIN-AS"},{ip:"55905", vendor:"COMZNET2"},{ip:"55906", vendor:"USTREAMASIA"},{ip:"55907", vendor:"GMO-DNS"},{ip:"55908", vendor:"NOMURA-NET"},{ip:"55909", vendor:"kochi-ct"},{ip:"55910", vendor:"SITNET-AS"},{ip:"55911", vendor:"TUFNESS-2"},{ip:"55912", vendor:"u-kochi"},{ip:"58645", vendor:"marinet"},{ip:"58646", vendor:"FBDC-B"},{ip:"58647", vendor:"KAGAWAU-AS"},{ip:"58648", vendor:"AT-I-NET"},{ip:"58649", vendor:"GMO-REG-NET"},{ip:"58650", vendor:"CATVWINK"},{ip:"58651", vendor:"GMO-REGSEC"},{ip:"58652", vendor:"Kochi-U-NET"},{ip:"58653", vendor:"VolvoITJapan"},{ip:"58654", vendor:"bless"},{ip:"58784", vendor:"RIS"},{ip:"58785", vendor:"TGU-NET"},{ip:"58786", vendor:"GMOKOR-NET"},{ip:"58787", vendor:"COMZNET"},{ip:"58788", vendor:"CHIRORO"},{ip:"58789", vendor:"DUNAMIS"},{ip:"58790", vendor:"ZDC"},{ip:"58791", vendor:"GMOOSK-NET"},{ip:"58792", vendor:"WI-GATE"},{ip:"58793", vendor:"NIFTY-NET"},{ip:"59091", vendor:"KAIT-NWLAB"},{ip:"59092", vendor:"KRONOS"},{ip:"59093", vendor:"ICKNET"},{ip:"59094", vendor:"S2-NET"},{ip:"59095", vendor:"ACCELIA-W"},{ip:"59096", vendor:"MAIN"},{ip:"59097", vendor:"OCH-NET"},{ip:"59098", vendor:"TCVDC"},{ip:"59099", vendor:"CLOUD-SDN-AS"},{ip:"59100", vendor:"kochi-gc"},{ip:"59101", vendor:"mirai-bs"},{ip:"59102", vendor:"GENES"},{ip:"59103", vendor:"SOFTETHER"},{ip:"59104", vendor:"SOKAU-AS"},{ip:"59105", vendor:"HOMENOC"},{ip:"59106", vendor:"SKYLINKS"},{ip:"59107", vendor:"HTV-NET"},{ip:"59108", vendor:"KATCH-NET"},{ip:"59109", vendor:"HITCLOUD"},{ip:"59110", vendor:"BPS"},{ip:"59111", vendor:"AIU-NET"},{ip:"59112", vendor:"PLUSONE"},{ip:"59113", vendor:"RJV6-NET"},{ip:"59114", vendor:"RECRUIT"},{ip:"131078", vendor:"KDDLAB-4OCT"},{ip:"131079", vendor:"MULTIFEED-2"},{ip:"131080", vendor:"SAKURA-D"},{ip:"131081", vendor:"InetCore4"},{ip:"131082", vendor:"JPIX-4"},{ip:"131084", vendor:"MKInet-JP"},{ip:"131085", vendor:"NCOM-IPv6NET"},{ip:"131086", vendor:"AVISNET-4"},{ip:"131152", vendor:"BBIX-NET"},{ip:"131153", vendor:"KVH-ISP"},{ip:"131154", vendor:"SHOWNET-4AS"},{ip:"131155", vendor:"HANABI4"},{ip:"131157", vendor:"MAGMA-IPV6"},{ip:"131158", vendor:"NAIST-AS"},{ip:"131159", vendor:"AS-YAMAGATAU"},{ip:"131160", vendor:"WI2"},{ip:"131893", vendor:"RICOH-NET"},{ip:"131894", vendor:"U-Cloud-2"},{ip:"131895", vendor:"OIST-NET"},{ip:"131896", vendor:"SSI-Lab"},{ip:"131897", vendor:"EHIME-U"},{ip:"131898", vendor:"YAHOO-3"},{ip:"131899", vendor:"DIG-NET"},{ip:"131900", vendor:"DIRECTORZ"},{ip:"131901", vendor:"fidessa-kk"},{ip:"131902", vendor:"SNEI-NP"}]};
+$(document).on("ready", function(){
+	$("#start-button").on("click", function(){start_karuta();});
+	start_karuta();
+});
+
+function get_item(item_id){
+	if(item_id > ip["items"].length - 1){
+		return 0;
+	}
+	return ip["items"][item_id];
+}
+
+function start_karuta(){
+
+	//初期化
+	$("#display, #tr-cards, #result").html("");
+	$("<p>", {id:"display-text", class:"fadein"}).appendTo("div#display");
+	$("<span>", {id: "yomi-ip"}).appendTo("p#display-text");
+	$("<br>").appendTo("p#display-text");
+	//$("<span>", {id: "yomi-vendor"}).appendTo("p#display-text");
+
+	// 読み札を出す
+	while(1){
+		var yomi_id = Math.floor( Math.random() * ip["items"].length );
+		var yomi = get_item(yomi_id);
+		if(yomi["vendor"] != "None"){
+			break;
+		}
+	}
+	
+	// 読み札HTML描画
+	$("span#yomi-ip").text(yomi["ip"]);
+	$("span#yomi-vendor").text(yomi["vendor"]);
+
+	// 選択肢定義
+	var cards_num = 5;
+	var yomi_num = Math.floor( Math.random() * cards_num );
+	var cards = [];
+
+	// 札を作成
+	for(var i=0; i<cards_num; i++){
+		if(i == yomi_num){
+			tmp_card = yomi;	
+		}else{
+			var tmp_card_id = null;
+			while(1){
+				tmp_card_id = Math.floor( Math.random() * ip["items"].length );
+				tmp_card = get_item(tmp_card_id);
+				for(var i=0; i<cards.length; i++){
+					var hasCards = false;
+					if(cards[i]["vendor"] == tmp_card["vendor"]){
+						hasCards = true;
+					}
+				}
+				if(!hasCards && yomi["vendor"] != tmp_card["vendor"] && tmp_card["vendor"] != "None"){
+					break;
+				}
+			}
+			
+		}
+		cards.push(tmp_card);
+
+		// HTML描画
+		$("<td>", {id: "card"+i, class: "cards"}).appendTo("tr#tr-cards");
+		$("<a>", {"data-index": tmp_card["vendor"], href: "javascript:void(0);",text: tmp_card["vendor"], class: "answer"}).appendTo("td#card"+i);
+	}
+
+	$("a.answer").on("click", function(){
+		$("#result").css({"font-size":"30px", "text-align": "center"});
+		if ($(this).attr("data-index") == yomi["vendor"]){
+			$("#result").css({"background-color":"#99ff00"});
+			$("#result").text("正解");
+		}else{
+			$("#result").css({"background-color":"#ff3300"});
+			$("#result").text("はずれ");
+		}
+	});
+	
+	draw_ip();
+
+}
+
+function draw_ip(){
+	var DELAY_SPEED = 200;
+	var FADE_SPEED = 500;
+	str = [];
+	$('.fadein > span').each(function(i){
+		$(this).css('opacity','1');
+		str[i] = $(this).text();
+		$(this).text('');
+		var no = i;
+		var self = this;
+		var interval = setInterval(function(){
+			if(no == 0 || $('.fadein > span').eq(no - 1).children('span:last').css('opacity') == 1){
+			    clearInterval(interval);
+				for (var j = 0; j < str[no].length; j++) {
+					$(self).append('<span>'+str[no].substr(j, 1)+'</span>');
+					$(self).children('span:last').delay(DELAY_SPEED * j).animate({opacity:'1'}, FADE_SPEED);
+				}
+			}
+		}, 50);
+	});
+}
+
+
+</script>
+<style>
+.fadein span{
+    opacity:0;
+}
+table tr td{
+	border:10px solid;
+}
+td{
+	height:130px;
+	width:200px;
+}
+div#display{
+	padding-top: 15px;
+	background-color: #f0f8ff;
+	height:200px;
+	font-size:30px;
+}
+div#cards{
+	height:280px;
+}
+</style>
+</head>
+<body>
+<h1>AS Karuta</h1>
+<input type="button" id="start-button" value="RESTART">
+<div id="display"></div>
+<div id="cards"><h2>Who has this AS number?</h2><div id="result"></div><table><tr id="tr-cards"></tr></table></div>
+<hr>
+<div id="footer">
+yoshinori matsumoto <a href="https://twitter.com/ym405nm" target="_blank">@ym405nm</a><br><br>
+Reference<br>
+<a href="https://www.nic.ad.jp/ja/ip/as-numbers.txt" target="_blank">https://www.nic.ad.jp/ja/ip/as-numbers.txt</a><br><br>
+Respect<br>
+assembler karuta<br>
+binary karuta<br><br>
+JavaScript Reference<br>
+<a href="http://jsdo.it/mutsuki_sun/tOxS" target="_blank">http://jsdo.it/mutsuki_sun/tOxS</a><br>
+</div>
+
+</body>
+</html>
